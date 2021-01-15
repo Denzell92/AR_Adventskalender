@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject referencePoint;
     void Start()
     {
         
@@ -14,9 +15,16 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         //ist okay aber noch fehlerbehaftet
-        if (transform.position.y < -20)
+        /*if (transform.position.y < -20)
+        {
+            Destroy(gameObject);
+        }*/
+
+        if (transform.position.y < referencePoint.transform.position.y)
         {
             Destroy(gameObject);
         }
+
+
     }
 }
