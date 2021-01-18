@@ -37,9 +37,9 @@ public class PresentSpawner : MonoBehaviour
                 newPresent.transform.parent = marker.transform;
 
                 //newPresent.transform.position = new Vector3(Random.Range(15, -15), transform.position.y, transform.position.z);
-                newPresent.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                newPresent.transform.position = new Vector3(Random.Range(transform.position.x + 5, transform.position.x - 5), transform.position.y, transform.position.z);
 
-                timer = 5f;
+                timer = 2f;
             }
         }
     }
