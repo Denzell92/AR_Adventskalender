@@ -1,29 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ObjectColorScript : MonoBehaviour
+namespace ScriptColorPicker
 {
-    // Start is called before the first frame update
-    public Material activeMaterial;
-    void Start()
+    public class ObjectColorScript : MonoBehaviour
     {
-        
-    }
+        // Start is called before the first frame update
+        public Material activeMaterial;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void OnMouseDown()
-    {
-        if (Input.GetMouseButtonDown(0))
+        private void OnMouseDown()
         {
-            if (activeMaterial != null)
+            if (Input.GetMouseButtonDown(0))
             {
-                GetComponent<Renderer>().material = activeMaterial;
+                if (activeMaterial != null)
+                {
+                    GetComponent<Renderer>().material = activeMaterial;
+                }
             }
         }
     }

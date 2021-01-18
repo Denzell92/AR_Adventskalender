@@ -1,31 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonColorScript : MonoBehaviour
+namespace ScriptColorPicker
 {
-    // Start is called before the first frame update
-
-    public Material colorMaterial;
-    void Start()
+    public class ButtonColorScript : MonoBehaviour
     {
+        // Start is called before the first frame update
+
+        public Material colorMaterial;
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void respond()
-    {
-        List<ObjectColorScript> scriptList = new List<ObjectColorScript>();
-        scriptList.AddRange(FindObjectsOfType(typeof(ObjectColorScript)) as ObjectColorScript[]);
-
-        foreach (ObjectColorScript c in scriptList)
+        public void respond()
         {
-            c.activeMaterial = colorMaterial;
+            List<ObjectColorScript> scriptList = new List<ObjectColorScript>();
+            scriptList.AddRange(FindObjectsOfType(typeof(ObjectColorScript)) as ObjectColorScript[]);
+
+            foreach (ObjectColorScript c in scriptList)
+            {
+                c.activeMaterial = colorMaterial;
+            }
         }
     }
 }
