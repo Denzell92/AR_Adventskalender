@@ -7,11 +7,15 @@ public class SnowmanSpawnerScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject marker;
-    public GameObject enemy;
-    float timer = 2f;
+    public GameObject snowMan;
+    public GameObject snowWoman;
+    float timer = 1f;
+    List<GameObject> enemyList;
     void Start()
     {
-        
+        enemyList = new List<GameObject>();
+        enemyList.Add(snowMan);
+        enemyList.Add(snowWoman);
     }
 
     // Update is called once per frame
@@ -25,12 +29,12 @@ public class SnowmanSpawnerScript : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                GameObject newEnemy = (GameObject)Instantiate(enemy);
+                GameObject newEnemy = (GameObject)Instantiate(enemyList[(int)Random.Range(0.0f, 1.99f)]);
                 newEnemy.transform.parent = marker.transform;
                 var enemyScript = newEnemy.GetComponent<EnemyScript>();
                 enemyScript.target = GameObject.Find("Target");
-                newEnemy.transform.position = new Vector3(Random.Range(transform.position.x + 4, transform.position.x - 4), transform.position.y, transform.position.z);
-                timer = 5f;
+                newEnemy.transform.position = new Vector3(Random.Range(transform.position.x + 8, transform.position.x - 8), transform.position.y, transform.position.z);
+                timer = 2f;
             }
         }
     }

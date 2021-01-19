@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour
     public GameObject referencePoint;
     void Start()
     {
-        
+        referencePoint = GameObject.Find("ImageTarget");
     }
 
     // Update is called once per frame
