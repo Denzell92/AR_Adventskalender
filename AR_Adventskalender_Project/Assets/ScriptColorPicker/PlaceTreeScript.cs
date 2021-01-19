@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ScriptColorPicker
 {
@@ -11,6 +12,11 @@ namespace ScriptColorPicker
         {
             groundPlane.gameObject.SetActive(true);
             tree.transform.SetParent(groundPlane.transform, false);
+        }
+
+        public void Reset()
+        {
+            SceneManager.LoadScene("TreeDecorator");
         }
     }
 }
