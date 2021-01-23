@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.Remote_tester.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\Users\dieter\dev\Remote_tester\.idea\.idea.Remote_tester\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
